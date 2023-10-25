@@ -63,6 +63,7 @@ namespace SinglyLinkedList
         if (i.m_data.Equals(item))
         {
           prev.m_next = i.m_next;
+          m_cnt--;
           return true;
         }
         prev = i;
