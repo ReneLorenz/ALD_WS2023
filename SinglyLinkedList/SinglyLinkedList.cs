@@ -70,5 +70,12 @@ namespace SinglyLinkedList
 
       return false;
     }
+
+    public void Clear()
+    {
+      m_head = null;
+      m_last = null;
+      m_cnt = 0;
+    }
   }
 }
