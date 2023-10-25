@@ -57,7 +57,7 @@ namespace SinglyLinkedList
 
     public bool Remove(T item) 
     {
-      Node<T> prev = m_head;
+      Node<T> prev = null;
       for (Node<T> i = m_head; i != null; i = i.m_next)
       {
         if (i.m_data.Equals(item))
