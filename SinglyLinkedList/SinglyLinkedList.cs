@@ -20,11 +20,17 @@ namespace SinglyLinkedList
     public T m_data { get; set; }
   }
 
-  public class SinglyLinkedList<T>
+  public class SinglyLinkedList<T> : IEnumerable<T>, IEnumerator<T>
   {
     Node<T> m_head { get; set; }
     Node<T> m_last { get; set; }
     int m_cnt { get; set; }
+
+    public T Current { get { return m_currentNode.m_data; } }
+
+    object IEnumerator.Current { get { return Current; } }
+
+    private Node<T> m_currentNode;
 
     public void Add(T item)
     {
@@ -77,6 +83,40 @@ namespace SinglyLinkedList
       m_head = null;
       m_last = null;
       m_cnt = 0;
+    }
+
+    public bool MoveNext()
+    {
+      if (m_head == null) return false;
+
+      if(m_currentNode == null)
+      {
+        m_currentNode = m_head;
+        return true;
+      }
+
+      m_currentNode = m_currentNode.m_next;
+      return m_currentNode != null;
+    }
+
+    public void Reset()
+    {
+      throw new NotImplementedException();
+    }
+
+    public void Dispose()
+    {
+      //nothing todo
+    }
+
+    public IEnumerator<T> GetEnumerator()
+    {
+      return this;
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+      return GetEnumerator();
     }
   }
 }

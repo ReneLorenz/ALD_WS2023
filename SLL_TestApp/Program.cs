@@ -15,6 +15,7 @@ namespace SLL_TestApp
       this.id = id;
     }
 
+
     public override bool Equals(object obj)
     {
       var heli = obj as Helicopter;
@@ -36,9 +37,23 @@ namespace SLL_TestApp
       myList.Add(3);
       myList.Add(4);
 
+      foreach(int i in myList)
+      { 
+        System.Console.WriteLine(i);
+      }
+
+      List<int> list = new List<int>();
+
+      foreach (int i in myList)
+      {
+        System.Console.WriteLine(i);
+      }
+
+
       bool exist = myList.Contains(3);
 
-      while (myList.Remove(3)) {}
+
+      while (myList.Remove(3)) { }
 
       exist = myList.Contains(3);
 
@@ -53,7 +68,11 @@ namespace SLL_TestApp
 
       var heliExist = helis.Contains(c);
 
-      Console.Read();
+      //Console.Read();
+
+      ArrayList.ArrayList<int> myArrList = new ArrayList.ArrayList<int>();
+      ArrayList.ArrayList<int> myArrList2 = new ArrayList.ArrayList<int>(100);
+
 
     }
   }

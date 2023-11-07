@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{34AA768E-C5A9-44FB-9D7A-D10862BFA3C3}</ProjectGuid>
+    <ProjectGuid>{5781F0DC-AE21-4563-937A-D17137126D75}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SLL_TestApp</RootNamespace>
-    <AssemblyName>SLL_TestApp</AssemblyName>
+    <RootNamespace>QueueExample</RootNamespace>
+    <AssemblyName>QueueExample</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,16 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ArrayList\ArrayList.csproj">
-      <Project>{ab14e90d-ad5b-4e3c-a911-88d6615f7cb0}</Project>
-      <Name>ArrayList</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SinglyLinkedList\SinglyLinkedList.csproj">
-      <Project>{e580f06a-7656-45d7-bf8b-ddeecdd2201d}</Project>
-      <Name>SinglyLinkedList</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
