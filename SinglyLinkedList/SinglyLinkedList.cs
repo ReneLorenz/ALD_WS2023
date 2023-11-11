@@ -68,7 +68,15 @@ namespace SinglyLinkedList
       {
         if (i.m_data.Equals(item))
         {
-          prev.m_next = i.m_next;
+          if(i == m_head)
+          {
+            m_head = null;
+          }
+          else
+          {
+            prev.m_next = i.m_next;
+          }
+
           m_cnt--;
           return true;
         }
