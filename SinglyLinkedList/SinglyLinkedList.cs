@@ -114,7 +114,7 @@ namespace SinglyLinkedList
 
     public void Dispose()
     {
-      //nothing todo
+      m_currentNode = null;
     }
 
     public IEnumerator<T> GetEnumerator()
