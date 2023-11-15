@@ -8,7 +8,7 @@ namespace ArrayList
 {
   internal class Node<T>
   {
-    public T m_data { get; private set; }
+    public T m_data { get; set; }
     public Node(T value)
     {
       m_data = value;
@@ -25,6 +25,8 @@ namespace ArrayList
       m_array = new Node<T>[len];
       m_itemCnt = 0;
     }
+
+    public int Length { get { return m_array.Length; } }
 
     public void Add(T item)
     {
@@ -52,6 +54,29 @@ namespace ArrayList
     {
       if (index < 0 || index >= m_array.Length) throw new IndexOutOfRangeException("bla");
       m_array[index] = new Node<T>(item);
+    }
+
+    public T this[int i]
+    {
+      get 
+      {
+        if (i < 0 || i > m_array.Length) throw new IndexOutOfRangeException();
+        if (m_array[i] == null) throw new IndexOutOfRangeException();
+        return m_array[i].m_data;
+      }
+      set 
+      {
+        if (i < 0 || i > m_array.Length) throw new IndexOutOfRangeException();
+        if (m_array[i] == null)
+        {
+          Node<T> tmp = new Node<T>(value); 
+          m_array[i] = tmp;
+        }
+        else
+        {
+          m_array[i].m_data = value;
+        }
+      }
     }
 
 
